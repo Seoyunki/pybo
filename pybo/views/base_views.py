@@ -1,9 +1,13 @@
 from django.core.paginator import Paginator 
 from django.shortcuts import render, get_object_or_404
+import logging
+
+logger = logging.getLogger('pybo')
 
 from ..models import Question
 
 def index(request):
+    logger.info("INFO 레벨로 출력")
     ## pybo 목록 출력
     # 입력인자
     page = request.GET.get('page', '1')
